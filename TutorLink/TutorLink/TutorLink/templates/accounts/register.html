@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<section class="card narrow">
+  <p class="eyebrow">Join the circle</p>
+  <h1>Create your account</h1>
+  <p class="muted">Choose <strong>Student</strong> to book sessions or <strong>Tutor</strong> to offer them.
+     Tutor accounts are reviewed by an administrator before they can post sessions.</p>
+  <form method="post">
+    {% csrf_token %}
+    {% include "partials/form_fields.html" %}
+    <button type="submit" class="btn">Register</button>
+  </form>
+  <p class="muted">Already registered? <a href="{% url 'login' %}">Log in</a>.</p>
+</section>
+{% endblock %}

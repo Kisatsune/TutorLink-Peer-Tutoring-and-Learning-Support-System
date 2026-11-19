@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Rate session{% endblock %}
+{% block content %}
+<section class="card narrow">
+  <h1>Rate your session</h1>
+  <p class="muted">{{ booking.session.subject.name }} with
+     {{ booking.session.tutor.get_full_name|default:booking.session.tutor.username }}
+     on {{ booking.session.date|date:"M j, Y" }}</p>
+  <form method="post">
+    {% csrf_token %}
+    {% include "partials/form_fields.html" %}
+    <button type="submit" class="btn">Submit feedback</button>
+  </form>
+</section>
+{% endblock %}

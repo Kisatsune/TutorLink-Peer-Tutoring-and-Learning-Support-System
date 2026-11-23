@@ -30,7 +30,6 @@ The system is designed around the "Tanglaw"
 ## Getting started
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py seed_demo
 python manage.py runserver
 
 Then open http://127.0.0.1:8000/. To use the admin dashboard, run
